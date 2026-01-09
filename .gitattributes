@@ -1,0 +1,10 @@
+*.jsonl filter=lfs diff=lfs merge=lfs -text
+实验四/hf_cache/hub/models--Qwen--Qwen2.5-0.5B/blobs/* filter=lfs diff=lfs merge=lfs -text
+实验四/hf_cache/hub/models--sentence-transformers--all-MiniLM-L6-v2/blobs/* filter=lfs diff=lfs merge=lfs -text
+*.pth filter=lfs diff=lfs merge=lfs -text
+*.bin filter=lfs diff=lfs merge=lfs -text
+*.model filter=lfs diff=lfs merge=lfs -text
+实验四/hf_cache/hub/models--Qwen--Qwen2.5-0.5B/snapshots/** filter=lfs diff=lfs merge=lfs -text
+实验四/hf_cache/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/** filter=lfs diff=lfs merge=lfs -text
+*.safetensors filter=lfs diff=lfs merge=lfs -text
+*.pt filter=lfs diff=lfs merge=lfs -text
