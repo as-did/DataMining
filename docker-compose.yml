@@ -1,0 +1,25 @@
+services:
+  medrag:
+    build: .
+    ports:
+      - "127.0.0.1:8501:8501"
+    volumes:
+      # 挂载整个项目（开发模式）
+      - .:/app
+      # 排除缓存和数据库
+      - /app/hf_cache
+      - /app/milvus_lite_data.db
+    environment:
+      - HF_ENDPOINT=https://hf-mirror.com
+      - STREAMLIT_SERVER_PORT=8501
+    container_name: medical-rag-system
+    command: streamlit run app.py --server.port=8501 --server.address=0.0.0.0
+
+    # 添加健康检查（自动重启）
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+
