@@ -1,0 +1,4 @@
+__pycache__
+*.pyc
+.milvus_lite_data.db
+hf_cache/
